@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="16dp"
+    android:backgroundTint="?attr/colorTertiaryContainer"
+    app:cardCornerRadius="4dp"
+    app:cardElevation="4dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/item_image"
+            android:layout_width="match_parent"
+            android:layout_height="330dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/rounded_corners"
+            android:clipToOutline="true"
+            android:outlineProvider="background"
+            android:scaleType="centerCrop"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:srcCompat="@drawable/akihiko_hoshide_2012" />
+
+        <TextView
+            android:id="@+id/item_name_agency"
+            style="@style/Widget.InOuterSpace.TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:paddingBottom="10dp"
+            android:textColor="?attr/colorOnPrimaryContainer"
+            android:textSize="20sp"
+            tools:text="@string/cosmonauts_name_agency" />
+
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>

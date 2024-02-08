@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Widget.InOuterSpace.TextView" parent="Widget.MaterialComponents.TextView">
+        <item name="fontFamily">@font/sarala</item>
+        <item name="android:textColor">?attr/colorOnPrimaryContainer</item>
+    </style>
+</resources>
