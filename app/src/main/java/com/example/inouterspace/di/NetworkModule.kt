@@ -12,16 +12,28 @@ private const val BASE_URL = "https://api.spacexdata.com/v4/"
 
 val networkModule = module {
 
-    single {
-        provideCrewApiRetrofit(retrofit = get())
+    single{
+        val retrofit: Retrofit = get()
+        retrofit.create(CrewApi::class.java)
     }
 
-    single<Retrofit> {
-        provideRetrofit(okHttpClient = get())
+    single <Retrofit> {
+        val okHttpClient: OkHttpClient = get()
+        Retrofit
+            .Builder()
+            .baseUrl(BASE_URL)
+            .client(okHttpClient)
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
+
     }
 
     single {
-        provideHttpClient(httpLoggingInterceptor = get())
+        val httpLoggingInterceptor : HttpLoggingInterceptor = get()
+        OkHttpClient
+            .Builder()
+            .addInterceptor(httpLoggingInterceptor)
+            .build()
     }
 
     single {
@@ -30,17 +42,3 @@ val networkModule = module {
         }
     }
 }
-
-private fun provideCrewApiRetrofit(retrofit: Retrofit) = retrofit.create(CrewApi::class.java)
-
-private fun provideRetrofit(okHttpClient: OkHttpClient) = Retrofit
-    .Builder()
-    .baseUrl(BASE_URL)
-    .client(okHttpClient)
-    .addConverterFactory(GsonConverterFactory.create())
-    .build()
-
-private fun provideHttpClient(httpLoggingInterceptor: HttpLoggingInterceptor) = OkHttpClient
-    .Builder()
-    .addInterceptor(httpLoggingInterceptor)
-    .build()

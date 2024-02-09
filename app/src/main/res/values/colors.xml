@@ -18,7 +18,7 @@
         <color name="red_700">#ba1a1a</color>
         <color name="red_900">#410002</color>
         <color name="black">#FF000000</color>
-        <color name="black_900">#1c1b1f</color>
+        <color name="black_800">#302F33</color>
         <color name="white">#FFFFFFFF</color>
         <color name="white_300">#fffbff</color>
 </resources>
