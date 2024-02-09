@@ -17,7 +17,7 @@ val appModule = module {
 //    }
 
     viewModel {
-        CrewViewModel(crewRepository = get<CrewRepositoryImpl>())
+        CrewViewModel(crewRepository = get())
     }
 
 }
